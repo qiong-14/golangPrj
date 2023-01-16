@@ -7,7 +7,7 @@
 go run server.go
 ```
 ### 2. 访问并返还页面信息
-访问本地服务器并获取页面信息时，由于gin.default()初始化默认8080端口，因此在访问时要访问http://localhost:8080。若不需要解析json数据可在cmd中输入以下命令
+访问本地服务器并获取页面信息时，由于gin.default()初始化默认8080端口，因此在访问时要访问http://localhost:8080/。若不需要解析json数据可在cmd中输入以下命令
 ```shell
 curl --location --request GET http://localhost:8080/community/page/2
 ```
