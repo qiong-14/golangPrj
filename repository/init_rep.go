@@ -55,10 +55,11 @@ func initPostIndexMap(filePath string) error {
 		if err := json.Unmarshal([]byte(text), &post); err != nil {
 			return err
 		}
-		posts, ok := postIndexMap[post.ParentId]
+		posts, ok := postTmpMap[post.ParentId]
 
 		if !ok {
-			postIndexMap[post.ParentId] = []*Post{&post}
+			postTmpMap[post.ParentId] = []*Post{&post}
+			continue
 		}
 		posts = append(posts, &post)
 		postTmpMap[post.ParentId] = posts

@@ -1,4 +1,4 @@
-package testProject
+package main
 
 import (
 	"github.com/gin-gonic/gin"
@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	if err := Init("data"); err != nil {
+	if err := Init("./data/"); err != nil {
 		os.Exit(-1)
 	}
 	r := gin.Default()
@@ -21,6 +21,7 @@ func main() {
 	if err != nil {
 		return
 	}
+
 }
 
 func Init(filePath string) error {
